@@ -29,11 +29,6 @@ def images_to_hist(images, bins, low, up):
         histograms.append(concat_hist)
     return np.array(histograms)
 
-#def images_to_pca(train, n_components):
-#    pca = PCA(n_components)
-#    pca.fit(X=train)
-#    print(pca.explained_variance_ratio_.sum())
-#    return pca.transform(train), pca.transform
 
 def undersample(train):
     return train[:,::2]
@@ -51,7 +46,7 @@ def save_results(Yte, results_name="Yte_pred.csv", results_path="data"):
     Yte = {'Prediction' : Yte}
     dataframe = pd.DataFrame(Yte)
     dataframe.index += 1
-    dataframe.iloc[3] = 8
+    #dataframe.iloc[3] = 8
     dataframe.to_csv(results_path+results_name, index_label='Id')
 
     #print("Done")
